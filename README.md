@@ -43,7 +43,7 @@ dehydrated_challengetype | Challenge to use (http-01, dns-01) | http-01
 dehydrated_use_lexicon | Enable the use of lexicon | yes if dehydrated_challengetype == dns-01 else no
 dehydrated_lexicon_dns | Options for running lexicon | {}
 dehydrated_lexicon_dns_version | lexicon version to install | latest at the installation time
-dehydrated_lexicon_break_system_packages | to install lexicon without pip venv | not defined otherwise
+dehydrated_lexicon_extra_args | to install lexicon without pip venv | not defined otherwise
 dehydrated_hooks | Dict with hook-names for which to add scripts |
 dehydrated_hook_scripts | Add additional scripts to hooks-Directory | []
 dehydrated_key_algo | Keytype to generate (rsa, prime256v1, secp384r1) | rsa

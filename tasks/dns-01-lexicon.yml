@@ -8,7 +8,7 @@
   pip:
     name: "dns-lexicon{{ '==' ~ dehydrated_lexicon_dns_version if dehydrated_lexicon_dns_version is defined else '' }}"
     executable: "{{ dehydrated_pip_executable|default(omit) }}"
-    extra_args: "{{ dehydrated_lexicon_break_system_packages |default(omit) }}"
+    extra_args: "{{ dehydrated_lexicon_extra_args |default(omit) }}"
 
 - name: Copy hook script
   copy:

@@ -8,6 +8,25 @@
     update: "{{ dehydrated_update }}"
     dest: "{{ dehydrated_install_root }}"
     version: "{{ dehydrated_version }}"
+  when: install_from_url is not defined
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ dehydrated_install_root}}"
+    state: directory
+    mode: '0755'
+  when: install_from_url is defined
+
+- name: Download dehydrated from url
+  get_url:
+    url: "{{ install_from_url }}"
+    dest: "{{ dehydrated_install_root}}/dehydrated"
+    mode: "0755"
+    username: "{{ install_from_url_username }}"
+    password: "{{ install_from_url_password }}"
+  when: install_from_url is defined
+
+
 
 - name: Create /etc/dehydrated
   file: dest=/etc/dehydrated state=directory owner=root group=root mode=0700

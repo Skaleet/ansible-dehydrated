@@ -1,4 +1,7 @@
 ---
+install_from_url: "https://you url"
+install_from_url_username: "your login"
+install_from_url_password: "your password"
 dehydrated_dependencies:
   - git
   - openssl
